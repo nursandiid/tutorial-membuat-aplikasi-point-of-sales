@@ -5,10 +5,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ asset('/AdminLTE-2/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                <img src="<?php echo e(asset('/AdminLTE-2/dist/img/user2-160x160.jpg')); ?>" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>{{ auth()->user()->name }}</p>
+                <p><?php echo e(auth()->user()->name); ?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -17,35 +17,35 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li>
-                <a href="{{ route('dashboard') }}">
+                <a href="<?php echo e(route('dashboard')); ?>">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
 
             <li class="header">MASTER</li>
             <li>
-                <a href="{{ route('kategori.index') }}">
+                <a href="<?php echo e(route('kategori.index')); ?>">
                     <i class="fa fa-cube"></i> <span>Kategori</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('produk.index') }}">
+                <a href="<?php echo e(route('produk.index')); ?>">
                     <i class="fa fa-cubes"></i> <span>Produk</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('member.index') }}">
+                <a href="<?php echo e(route('member.index')); ?>">
                     <i class="fa fa-id-card"></i> <span>Member</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('supplier.index') }}">
+                <a href="<?php echo e(route('supplier.index')); ?>">
                     <i class="fa fa-truck"></i> <span>Supplier</span>
                 </a>
             </li>
             <li class="header">TRANSAKSI</li>
             <li>
-                <a href="{{ route('pengeluaran.index') }}">
+                <a href="<?php echo e(route('pengeluaran.index')); ?>">
                     <i class="fa fa-money"></i> <span>Pengeluaran</span>
                 </a>
             </li>
@@ -89,4 +89,4 @@
         </ul>
     </section>
     <!-- /.sidebar -->
-</aside>
+</aside><?php /**PATH /home/nur/Htdocs/tokoku/resources/views/layouts/sidebar.blade.php ENDPATH**/ ?>
