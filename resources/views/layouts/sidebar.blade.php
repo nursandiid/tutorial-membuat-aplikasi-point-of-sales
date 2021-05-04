@@ -50,7 +50,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('pembelian.index') }}">
                     <i class="fa fa-download"></i> <span>Pembelian</span>
                 </a>
             </li>
