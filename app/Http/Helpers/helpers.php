@@ -36,7 +36,7 @@ function tanggal_indonesia($tgl, $tampil_hari = true)
         'Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu'
     );
     $nama_bulan = array(1 =>
-        'Januari', 'Februari', 'Maret', 'April', 'Meri', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+        'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
     );
 
     $tahun   = substr($tgl, 0, 4);
