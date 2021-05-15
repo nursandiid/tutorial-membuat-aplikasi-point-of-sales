@@ -3,10 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ config('app.name') }} | @yield('title')</title>
+    <title>{{ $setting->nama_perusahaan }} | @yield('title')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="icon" href="{{ url($setting->path_logo) }}" type="image/png">
+
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="{{ asset('/AdminLTE-2/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- Font Awesome -->
@@ -82,6 +85,12 @@
     <!-- Validator -->
     <script src="{{ asset('js/validator.min.js') }}"></script>
 
+    <script>
+        function preview(selector, temporaryFile, width = 200)  {
+            $(selector).empty();
+            $(selector).append(`<img src="${window.URL.createObjectURL(temporaryFile)}" width="${width}">`);
+        }
+    </script>
     @stack('scripts')
 </body>
 </html>
