@@ -58,4 +58,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function scopeIsNotAdmin($query)
+    {
+        return $query->where('level', '!=', 1);
+    }
 }

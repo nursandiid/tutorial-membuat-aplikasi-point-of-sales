@@ -77,7 +77,7 @@
             </li>
             <li class="header">SYSTEM</li>
             <li>
-                <a href="#">
+                <a href="<?php echo e(route('user.index')); ?>">
                     <i class="fa fa-users"></i> <span>User</span>
                 </a>
             </li>
