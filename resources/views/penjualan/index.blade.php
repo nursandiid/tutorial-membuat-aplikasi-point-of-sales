@@ -11,7 +11,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-lg-12">
         <div class="box">
             <div class="box-body table-responsive">
                 <table class="table table-stiped table-bordered table-penjualan">

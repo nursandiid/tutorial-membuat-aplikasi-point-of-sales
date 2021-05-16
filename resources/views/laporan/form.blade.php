@@ -9,8 +9,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="tanggal_awal" class="col-md-2 col-md-offset-1 control-label">Tanggal Awal</label>
-                        <div class="col-md-6">
+                        <label for="tanggal_awal" class="col-lg-2 col-lg-offset-1 control-label">Tanggal Awal</label>
+                        <div class="col-lg-6">
                             <input type="text" name="tanggal_awal" id="tanggal_awal" class="form-control datepicker" required autofocus
                                 value="{{ request('tanggal_awal') }}"
                                 style="border-radius: 0 !important;">
@@ -18,8 +18,8 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="tanggal_akhir" class="col-md-2 col-md-offset-1 control-label">Tanggal Akhir</label>
-                        <div class="col-md-6">
+                        <label for="tanggal_akhir" class="col-lg-2 col-lg-offset-1 control-label">Tanggal Akhir</label>
+                        <div class="col-lg-6">
                             <input type="text" name="tanggal_akhir" id="tanggal_akhir" class="form-control datepicker" required
                                 value="{{ request('tanggal_akhir') ?? date('Y-m-d') }}"
                                 style="border-radius: 0 !important;">
