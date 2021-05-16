@@ -128,6 +128,14 @@
                 $('[name=diskon]').val(response.diskon);
                 $('[name=tipe_nota]').val(response.tipe_nota);
                 $('title').text(response.nama_perusahaan + ' | Pengaturan');
+                
+                let words = response.nama_perusahaan.split(' ');
+                let word  = '';
+                words.forEach(w => {
+                    word += w.charAt(0);
+                });
+                $('.logo-mini').text(word);
+                $('.logo-lg').text(response.nama_perusahaan);
 
                 $('.tampil-logo').html(`<img src="{{ url('/') }}${response.path_logo}" width="200">`);
                 $('.tampil-kartu-member').html(`<img src="{{ url('/') }}${response.path_kartu_member}" width="300">`);
