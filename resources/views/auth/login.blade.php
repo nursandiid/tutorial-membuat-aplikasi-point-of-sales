@@ -11,13 +11,15 @@
             </a>
         </div>
 
-        <form action="{{ route('login') }}" method="post">
+        <form action="{{ route('login') }}" method="post" class="form-login">
             @csrf
             <div class="form-group has-feedback @error('email') has-error @enderror">
                 <input type="email" name="email" class="form-control" placeholder="Email" required value="{{ old('email') }}" autofocus>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 @error('email')
                     <span class="help-block">{{ $message }}</span>
+                @else
+                <span class="help-block with-errors"></span>
                 @enderror
             </div>
             <div class="form-group has-feedback @error('password') has-error @enderror">
@@ -25,6 +27,8 @@
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 @error('password')
                     <span class="help-block">{{ $message }}</span>
+                @else
+                    <span class="help-block with-errors"></span>
                 @enderror
             </div>
             <div class="row">
