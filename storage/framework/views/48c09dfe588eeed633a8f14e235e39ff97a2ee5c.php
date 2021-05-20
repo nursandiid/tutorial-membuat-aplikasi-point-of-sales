@@ -5,7 +5,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?php echo e(url(auth()->user()->foto)); ?>" class="img-circle img-profil" alt="User Image">
+                <img src="<?php echo e(url(auth()->user()->foto ?? '')); ?>" class="img-circle img-profil" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p><?php echo e(auth()->user()->name); ?></p>
@@ -22,6 +22,7 @@
                 </a>
             </li>
 
+            <?php if(auth()->user()->level == 1): ?>
             <li class="header">MASTER</li>
             <li>
                 <a href="<?php echo e(route('kategori.index')); ?>">
@@ -86,6 +87,18 @@
                     <i class="fa fa-cogs"></i> <span>Pengaturan</span>
                 </a>
             </li>
+            <?php else: ?>
+            <li>
+                <a href="<?php echo e(route('transaksi.index')); ?>">
+                    <i class="fa fa-cart-arrow-down"></i> <span>Transaksi Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo e(route('transaksi.baru')); ?>">
+                    <i class="fa fa-cart-arrow-down"></i> <span>Transaksi Baru</span>
+                </a>
+            </li>
+            <?php endif; ?>
         </ul>
     </section>
     <!-- /.sidebar -->

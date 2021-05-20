@@ -53,7 +53,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = bcrypt($request->password);
         $user->level = 2;
         $user->foto = '/img/user.jpg';
         $user->save();
@@ -98,7 +98,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         if ($request->has('password') && $request->password != "") 
-            $user->password = $request->password;
+            $user->password = bcrypt($request->password);
         $user->update();
 
         return response()->json('Data berhasil disimpan', 200);

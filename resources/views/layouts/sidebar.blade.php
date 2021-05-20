@@ -5,7 +5,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ url(auth()->user()->foto) }}" class="img-circle img-profil" alt="User Image">
+                <img src="{{ url(auth()->user()->foto ?? '') }}" class="img-circle img-profil" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>{{ auth()->user()->name }}</p>
@@ -22,6 +22,7 @@
                 </a>
             </li>
 
+            @if (auth()->user()->level == 1)
             <li class="header">MASTER</li>
             <li>
                 <a href="{{ route('kategori.index') }}">
@@ -86,6 +87,18 @@
                     <i class="fa fa-cogs"></i> <span>Pengaturan</span>
                 </a>
             </li>
+            @else
+            <li>
+                <a href="{{ route('transaksi.index') }}">
+                    <i class="fa fa-cart-arrow-down"></i> <span>Transaksi Aktif</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('transaksi.baru') }}">
+                    <i class="fa fa-cart-arrow-down"></i> <span>Transaksi Baru</span>
+                </a>
+            </li>
+            @endif
         </ul>
     </section>
     <!-- /.sidebar -->
