@@ -67,6 +67,10 @@ APP_KEY=base64:QGRW4K7UVzS2M5HE2ZCLlUuiCtOIzRSfb38iWApkphE=
 APP_DEBUG=true
 APP_URL=http://example-app.test
 ```
+Generate key
+```bash
+php artisan key:generate
+```
 Migrate database
 ```bash
 php artisan migrate
