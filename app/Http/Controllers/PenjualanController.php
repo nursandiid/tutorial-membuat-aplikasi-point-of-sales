@@ -128,6 +128,11 @@ class PenjualanController extends Controller
         $penjualan = Penjualan::find($id);
         $detail    = PenjualanDetail::where('id_penjualan', $penjualan->id_penjualan)->get();
         foreach ($detail as $item) {
+            $produk = Produk::find($item->id_produk);
+            if ($produk) {
+                $produk->stok += $item->jumlah;
+            }
+
             $item->delete();
         }
 
