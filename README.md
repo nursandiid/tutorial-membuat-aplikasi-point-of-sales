@@ -50,6 +50,10 @@ atau:
 ```bash
 composer install
 ```
+Copy file .env dari .env.example
+```bash
+cp .env .env.exmaple
+```
 Konfigurasi file .env
 ```bash
 DB_CONNECTION=mysql
