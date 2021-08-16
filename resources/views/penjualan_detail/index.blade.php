@@ -170,6 +170,7 @@
             ],
             dom: 'Brt',
             bSort: false,
+            paginate: false
         })
         .on('draw.dt', function () {
             loadForm($('#diskon').val());
