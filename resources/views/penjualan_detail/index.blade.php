@@ -153,7 +153,9 @@
         $('body').addClass('sidebar-collapse');
 
         table = $('.table-penjualan').DataTable({
+            responsive: true,
             processing: true,
+            serverSide: true,
             autoWidth: false,
             ajax: {
                 url: '{{ route('transaksi.data', $id_penjualan) }}',

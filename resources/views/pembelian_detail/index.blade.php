@@ -141,7 +141,9 @@
         $('body').addClass('sidebar-collapse');
 
         table = $('.table-pembelian').DataTable({
+            responsive: true,
             processing: true,
+            serverSide: true,
             autoWidth: false,
             ajax: {
                 url: '{{ route('pembelian_detail.data', $id_pembelian) }}',

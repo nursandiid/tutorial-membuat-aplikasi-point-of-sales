@@ -47,7 +47,9 @@
 
     $(function () {
         table = $('.table').DataTable({
+            responsive: true,
             processing: true,
+            serverSide: true,
             autoWidth: false,
             ajax: {
                 url: '{{ route('laporan.data', [$tanggalAwal, $tanggalAkhir]) }}',
