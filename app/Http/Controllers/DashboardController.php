@@ -39,6 +39,8 @@ class DashboardController extends Controller
             $tanggal_awal = date('Y-m-d', strtotime("+1 day", strtotime($tanggal_awal)));
         }
 
+        $tanggal_awal = date('Y-m-01');
+
         if (auth()->user()->level == 1) {
             return view('admin.dashboard', compact('kategori', 'produk', 'supplier', 'member', 'tanggal_awal', 'tanggal_akhir', 'data_tanggal', 'data_pendapatan'));
         } else {
