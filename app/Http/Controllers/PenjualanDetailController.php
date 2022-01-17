@@ -55,7 +55,7 @@ class PenjualanDetailController extends Controller
                                 </div>';
             $data[] = $row;
 
-            $total += $item->harga_jual * $item->jumlah;
+            $total += $item->harga_jual * $item->jumlah - (($item->diskon * $item->jumlah) / 100 * $item->harga_jual);;
             $total_item += $item->jumlah;
         }
         $data[] = [
@@ -89,8 +89,8 @@ class PenjualanDetailController extends Controller
         $detail->id_produk = $produk->id_produk;
         $detail->harga_jual = $produk->harga_jual;
         $detail->jumlah = 1;
-        $detail->diskon = 0;
-        $detail->subtotal = $produk->harga_jual;
+        $detail->diskon = $produk->diskon;
+        $detail->subtotal = $produk->harga_jual - ($produk->diskon / 100 * $produk->harga_jual);;
         $detail->save();
 
         return response()->json('Data berhasil disimpan', 200);
@@ -100,7 +100,7 @@ class PenjualanDetailController extends Controller
     {
         $detail = PenjualanDetail::find($id);
         $detail->jumlah = $request->jumlah;
-        $detail->subtotal = $detail->harga_jual * $request->jumlah;
+        $detail->subtotal = $detail->harga_jual * $request->jumlah - (($detail->diskon * $request->jumlah) / 100 * $detail->harga_jual);;
         $detail->update();
     }
 
