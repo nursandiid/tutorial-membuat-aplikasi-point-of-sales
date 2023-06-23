@@ -68,8 +68,9 @@
             columns: [
                 {data: 'DT_RowIndex', searchable: false, sortable: false},
                 {data: 'kode_produk'},
+                {data: 'barcode_produk'},
                 {data: 'nama_produk'},
-                {data: 'harga_jual'},
+                // {data: 'harga_jual'},
                 {data: 'jumlah'},
                 {data: 'subtotal'},
             ]

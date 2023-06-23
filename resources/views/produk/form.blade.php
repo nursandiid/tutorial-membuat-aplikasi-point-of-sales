@@ -19,6 +19,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="barcode_produk" class="col-lg-2 col-lg-offset-1 control-label">Barcode Produk</label>
+                        <div class="col-lg-6">
+                            <input type="text" name="barcode_produk" id="barcode_produk" class="form-control" required autofocus>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="id_kategori" class="col-lg-2 col-lg-offset-1 control-label">Kategori</label>
                         <div class="col-lg-6">
                             <select name="id_kategori" id="id_kategori" class="form-control" required>
