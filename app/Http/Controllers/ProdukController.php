@@ -39,6 +39,9 @@ class ProdukController extends Controller
             ->addColumn('kode_produk', function ($produk) {
                 return '<span class="label label-success">'. $produk->kode_produk .'</span>';
             })
+            ->addColumn('barcode_produk', function ($produk) {
+                return $produk->barcode_produk;
+            })
             ->addColumn('harga_beli', function ($produk) {
                 return format_uang($produk->harga_beli);
             })

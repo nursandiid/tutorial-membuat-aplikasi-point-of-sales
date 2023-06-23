@@ -30,6 +30,7 @@
                             </th>
                             <th width="5%">No</th>
                             <th>Kode</th>
+                            <th>Barcode Produk</th>
                             <th>Nama</th>
                             <th>Kategori</th>
                             <th>Merk</th>
@@ -66,6 +67,7 @@
                 {data: 'select_all', searchable: false, sortable: false},
                 {data: 'DT_RowIndex', searchable: false, sortable: false},
                 {data: 'kode_produk'},
+                {data: 'barcode_produk'},
                 {data: 'nama_produk'},
                 {data: 'nama_kategori'},
                 {data: 'merk'},
@@ -119,6 +121,7 @@
             .done((response) => {
                 $('#modal-form [name=nama_produk]').val(response.nama_produk);
                 $('#modal-form [name=id_kategori]').val(response.id_kategori);
+                $('#modal-form [name=barcode_produk]').val(response.barcode_produk);
                 $('#modal-form [name=merk]').val(response.merk);
                 $('#modal-form [name=harga_beli]').val(response.harga_beli);
                 $('#modal-form [name=harga_jual]').val(response.harga_jual);

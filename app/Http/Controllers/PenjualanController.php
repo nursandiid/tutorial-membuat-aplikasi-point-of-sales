@@ -107,6 +107,9 @@ class PenjualanController extends Controller
             ->addColumn('kode_produk', function ($detail) {
                 return '<span class="label label-success">'. $detail->produk->kode_produk .'</span>';
             })
+            ->addColumn('barcode_produk', function ($detail) {
+                return $detail->produk->barcode_produk;
+            })
             ->addColumn('nama_produk', function ($detail) {
                 return $detail->produk->nama_produk;
             })
